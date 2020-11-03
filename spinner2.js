@@ -1,10 +1,10 @@
-let timer = 0;
+let timer = 100;
 const spinnerAni = (seconds) => {
   let time = seconds * 1000;
 
-  const animation = ['\r/   ', '\r-   ', '\r\\   ', '\r|   ', '\r/   ', '\r-   '];
+  const animation = ['\r/   ', '\r-   ', '\r\\   ', '\r|   ', '\r/   ', '\r-   ', '\r\\   ', '\r|   '];
   
-  for (timer = 100; timer < time; i++) {
+  for (timer = 100; timer < time; timer++) {
     
     for (let char of animation) {
       setTimeout(() => {
@@ -12,8 +12,11 @@ const spinnerAni = (seconds) => {
       }, timer);
       timer += 200;
     }
-    return;
   }
+  setTimeout(() => {
+    console.log('\n');
+  }, timer + 200);
+  return;
 };
 
-spinnerAni(60);
+spinnerAni(5);
